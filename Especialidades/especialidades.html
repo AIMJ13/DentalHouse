@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Dashboard/Dashboard.css">
+    <link rel="stylesheet" href="especialidades.css">
+</head>
+<body>
+    <input type="checkbox" id="sidebar-toggle" hidden>
+    <input type="checkbox" id="menu-toggle" hidden>
+    
+       <div class="dashboard-container"> 
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="logo-icon">🦷</span>
+            <span class="brand-name">DentalHouse</span>
+        </div>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="../dashboard/dashboard.html"><span class="icon">📊</span> Resumen</a></li>
+                <li><a href="../doctor/doctor.html"><span class="icon">👥</span> Doctores</a></li>
+                <li><a href="#" class="active"><span class="icon">👥</span> Especialidades</a></li>
+                <li><a href="../Servicios/servicios.html"><span class="icon">⚙️</span> Servicios</a></li>
+                <li><a href="../Venta/ventas.html"><span class="icon">📋</span> Ventas</a></li>
+                <li><a href="../Paciente/pacientes.html"><span class="icon">👥</span> Pacientes</a></li>
+                <li><a href="../Cita/Citas.html"><span class="icon">📅</span> Agendar citas</a></li>
+            </ul>
+        </nav>
+    <div class="sidebar-footer"></div>       
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="top-bar">
+            <label for="sidebar-toggle" class="menu-toggle">☰</label>
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="search" placeholder="Buscar por nombre o especialidad...">
+            </div>
+
+            <div class="user-menu">
+
+                <label for="menu-toggle" class="user-profile">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s" class="avatar">
+                    <span>Dr. Morales</span>
+                    <span>▼</span>
+                </label>
+
+                <div class="dropdown">
+                    <a href="#">👤 Mi Perfil</a>
+                    <a href="#">⚙️ Configuración</a>
+                    <a href="../Login/index.html">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENIDO -->
+           
+    <section class="content-body">
+        <div class="especialidades-top">
+    <div class="welcome-header">
+        <h1>Especialidades Médicas</h1>
+        <p>Gestiona las especialidades de la clínica</p>
+    </div>
+
+    <label for="modal-add" class="btn-primary">
+        + Nueva Especialidad
+    </label>
+</div>
+     
+<!-- TABLA -->
+<div class="especialidades-grid">
+
+    <div class="esp-card">
+    <div class="esp-header">
+        <span class="icon">🦷</span>
+        <div>
+            <h3>Ortodoncia</h3>
+            <span class="status active">Activo</span>
+        </div>
+    </div>
+
+       <p class="esp-desc">
+        <strong>Descripción:</strong> Corrección de alineación dental y mordida.
+       </p>
+        <hr class="divider">
+
+        <div class="esp-info">
+            <span>👨‍⚕️ 1 Doctor</span>
+            <span>Área: Dental</span>
+        </div>
+
+        <div class="esp-footer">
+            <span class="price">Código: ESP-001</span>
+            <label for="modal-edit" class="btn-edit">Editar</label>
+        </div>
+    </div>
+
+    <div class="esp-card">
+        <div class="esp-header">
+            <span class="icon">🧬</span>
+            <div>
+                <h3>Endodoncia</h3>
+                <span class="status active">Activo</span>
+            </div>
+        </div>
+
+        <p class="esp-desc">
+            <strong>Descripción:</strong> Tratamiento de conductos radiculares.
+        </p>
+
+        <hr class="divider">
+
+        <div class="esp-info">
+            <span>👨‍⚕️ 4 Doctores</span>
+            <span>📁 Área: Dental</span>
+        </div>
+
+        <div class="esp-footer">
+            <span class="price">Código: ESP-002</span>
+            <label for="modal-edit" class="btn-edit">Editar</label>
+        </div>
+    </div>
+    
+    <div class="esp-card inactive">
+        <div class="esp-header">
+            <span class="icon">👶</span>
+            <div>
+                <h3>Odontopediatría</h3>
+                <span class="status inactive">Inactivo</span>
+            </div>
+        </div>
+
+        <p class="esp-desc">
+            <strong>Descripción:</strong> Atención dental especializada para niños.
+        </p>
+
+        <hr class="divider">
+
+        <div class="esp-info">
+            <span>👨‍⚕️ 0 Doctores</span>
+            <span>📁 Área: Infantil</span>
+        </div>
+
+        <div class="esp-footer">
+             <span class="price">Código: ESP-003</span>
+            <label for="modal-edit" class="btn-edit">Editar</label>
+        </div>
+    </div>
+    <div class="esp-card">
+        <div class="esp-header">
+            <span class="icon">🦿</span>
+            <div>
+                <h3>Implantología</h3>
+                <span class="status active">Activo</span>
+            </div>
+        </div>
+
+        <p class="esp-desc">
+            <strong>Descripción:</strong> Colocación de implantes dentales permanentes.
+        </p>
+
+        <hr class="divider">
+
+        <div class="esp-info">
+            <span>👨‍⚕️ 3 Doctores</span>
+            <span>📁 Área: Quirúrgica</span>
+        </div>
+
+        <div class="esp-footer">
+            <span class="price">Código: ESP-004</span>
+            <label for="modal-edit" class="btn-edit">Editar</label>
+        </div>
+    </div>
+ 
+     <div class="esp-card">
+        <div class="esp-header">
+            <span class="icon">🩺</span>
+            <div>
+                <h3>Periodoncia</h3>
+                <span class="status active">Activo</span>
+            </div>
+        </div>
+
+        <p class="esp-desc">
+            <strong>Descripción:</strong> Tratamiento de enfermedades de las encías.
+        </p>
+
+        <hr class="divider">
+
+        <div class="esp-info">
+            <span>👨‍⚕️ 6 Doctores</span>
+            <span>📁 Área: Preventiva</span>
+        </div>
+
+        <div class="esp-footer">
+            <span class="price">Código: ESP-005</span>
+            <label for="modal-edit" class="btn-edit">Editar</label>
+        </div>
+    </div>
+    <div class="esp-card inactive">
+        <div class="esp-header">
+            <span class="icon">🩻</span>
+            <div>
+                <h3>Cirugía Oral</h3>
+                <span class="status inactive">Inactivo</span>
+            </div>
+        </div>
+
+        <p class="esp-desc">
+            <strong>Descripción:</strong> Procedimientos quirúrgicos dentales complejos.
+        </p>
+
+        <hr class="divider">
+
+        <div class="esp-info">
+            <span>👨‍⚕️ 0 Doctores</span>
+            <span>📁 Área: Quirúrgica</span>
+        </div>
+
+        <div class="esp-footer">
+            <span class="price">Código: ESP-006</span>
+            <label for="modal-edit" class="btn-edit">Editar</label>
+        </div>
+    </div>
+
+
+</div>
+<!-- MODAL AGREGAR -->
+<input type="checkbox" id="modal-add" class="modal-toggle">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Nueva Especialidad</h2>
+            <label for="modal-add">✖</label>
+        </div>
+
+        <form class="modal-body">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Descripción">
+            <input type="number" placeholder="Codigo">
+
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+
+            <button class="btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- MODAL EDITAR -->
+<input type="checkbox" id="modal-edit" class="modal-toggle">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Editar Especialidad</h2>
+            <label for="modal-edit">✖</label>
+        </div>
+
+        <form class="modal-body">
+            <input type="text" value="Ortodoncia">
+            <input type="text" value="Corrección dental">
+            <input type="text" value="ESP-001">
+
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+
+            <button class="btn-primary">Guardar cambios</button>
+        </form>
+    </div>
+</div>
+</section>
+
+</main>
+</div>
+
+</body>
+</html>

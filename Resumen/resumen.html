@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores - DentalHouse</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Dashboard/Dashboard.css">
+    <link rel="stylesheet" href="resumen.css">
+</head>
+
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="logo-icon">🦷</span>
+            <span class="brand-name">DentalHouse</span>
+        </div>
+
+              <nav class="navigation">
+            <ul>
+                <li><a href="#" class="active"><span class="icon">📊</span> Resumen</a></li>
+                <li><a href="../Pacientes2/pacientes2.html"><span class="icon">👥</span> Pacientes</a></li>
+                <li><a href="../Citas2/citas2.html"><span class="icon">📅</span> Agendar citas</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer"></div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+          <header class="top-bar">
+    <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="search" placeholder="Buscar paciente o cita...">
+    </div>
+
+    <div class="user-menu">
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="user-profile">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s"
+                class="avatar"
+                alt="Doctor"
+            >
+            <span>Dr. López</span>
+            <span class="arrow">▼</span>
+        </label>
+
+        <div class="dropdown">
+            <a href="#">👤 Mi Perfil</a>
+            <a href="#">⚙️ Configuración</a>
+            <a href="../Login/index.html">🚪 Cerrar sesión</a>
+        </div>
+    </div>
+</header>
+
+<section class="dashboard-page">
+
+    <!-- ENCABEZADO -->
+    <div class="dashboard-header">
+        <h1>Mi Dashboard</h1>
+        <p>Bienvenido Dr. López — lunes, 23 de marzo de 2026</p>
+    </div>
+
+    <!-- TARJETAS DE ESTADÍSTICAS -->
+    <div class="dashboard-stats">
+
+        <div class="dashboard-stat blue">
+            <div class="stat-top">
+                <span>Citas de Hoy</span>
+                <span>📅</span>
+            </div>
+            <h3>6</h3>
+            <small>Programadas</small>
+        </div>
+
+        <div class="dashboard-stat green">
+            <div class="stat-top">
+                <span>Completadas</span>
+                <span>✔️</span>
+            </div>
+            <h3>2</h3>
+            <small>Finalizadas hoy</small>
+        </div>
+
+        <div class="dashboard-stat orange">
+            <div class="stat-top">
+                <span>Pendientes</span>
+                <span>🕒</span>
+            </div>
+            <h3>3</h3>
+            <small>Por atender</small>
+        </div>
+
+        <div class="dashboard-stat cyan">
+            <div class="stat-top">
+                <span>En Proceso</span>
+                <span>🔵</span>
+            </div>
+            <h3>1</h3>
+            <small>En consulta</small>
+        </div>
+
+    </div>
+
+    <!-- GRID PRINCIPAL -->
+    <div class="dashboard-grid">
+
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="dashboard-left">
+
+            <!-- CITAS DEL DÍA -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Mis Citas de Hoy</h2>
+                    <span class="badge badge-blue">6 citas</span>
+                </div>
+
+                <!-- CITA 1 -->
+                <div class="appointment-card">
+                    <div class="appointment-time">09:00</div>
+
+                    <div class="appointment-info">
+                        <h4>Juan Pérez</h4>
+                        <p>35 años</p>
+                        <p>Servicio: Limpieza Dental</p>
+                        <p>Notas: Primera visita</p>
+
+                        <div class="appointment-actions">
+                            <button class="btn-start">Iniciar Consulta</button>
+                            <button class="btn-history">Ver Historial</button>
+                        </div>
+                    </div>
+
+                    <span class="appointment-status confirmed">
+                        Confirmada
+                    </span>
+                </div>
+
+                <!-- CITA 2 -->
+                <div class="appointment-card">
+                    <div class="appointment-time">10:30</div>
+
+                    <div class="appointment-info">
+                        <h4>María Torres</h4>
+                        <p>28 años</p>
+                        <p>Servicio: Revisión de Ortodoncia</p>
+                        <p>Notas: Ajuste mensual</p>
+
+                        <div class="appointment-actions">
+                            <button class="btn-start">Iniciar Consulta</button>
+                            <button class="btn-history">Ver Historial</button>
+                        </div>
+                    </div>
+
+                    <span class="appointment-status confirmed">
+                        Confirmada
+                    </span>
+                </div>
+
+                <!-- CITA 3 -->
+                <div class="appointment-card in-progress">
+                    <div class="appointment-time">11:30</div>
+
+                    <div class="appointment-info">
+                        <h4>Carlos Mora</h4>
+                        <p>42 años</p>
+                        <p>Servicio: Endodoncia</p>
+                        <p>Notas: Segunda sesión</p>
+
+                        <div class="appointment-actions">
+                            <button class="btn-finish">Finalizar Consulta</button>
+                            <button class="btn-history">Ver Historial</button>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="dashboard-right">
+
+            <!-- PACIENTES RECIENTES -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Pacientes Recientes</h2>
+                </div>
+
+                <div class="recent-patient">
+                    <div>
+                        <strong>Ana Pérez</strong>
+                        <p>Limpieza</p>
+                        <small>Hoy</small>
+                    </div>
+                    <span class="tag success">Completado</span>
+                </div>
+
+                <div class="recent-patient">
+                    <div>
+                        <strong>María Torres</strong>
+                        <p>Ortodoncia</p>
+                        <small>Ayer</small>
+                    </div>
+                    <span class="tag warning">En seguimiento</span>
+                </div>
+
+                <div class="recent-patient">
+                    <div>
+                        <strong>Carlos Mora</strong>
+                        <p>Endodoncia</p>
+                        <small>Hace 2 días</small>
+                    </div>
+                    <span class="tag info">Regular cita</span>
+                </div>
+
+                <button class="btn-view-all">Ver Todos</button>
+            </div>
+
+            <!-- ACCIONES RÁPIDAS -->
+            <div class="dashboard-card quick-actions">
+                <div class="card-header">
+                    <h2>Acciones Rápidas</h2>
+                </div>
+
+                <button class="quick-btn">➕ Nuevo Paciente</button>
+                <button class="quick-btn">📅 Agendar Cita</button>
+                <button class="quick-btn">💲 Registrar Pago</button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+        
+
+    </main>
+</div>
+
+</body>
+</html>

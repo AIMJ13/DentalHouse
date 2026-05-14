@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctores - DentalHouse</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Dashboard/Dashboard.css">
+    <link rel="stylesheet" href="doctor.css">
+</head>
+<body>
+<input type="checkbox" id="modal-doctor" hidden>
+<input type="checkbox" id="modal-editar" hidden>
+<input type="checkbox" id="sidebar-toggle" hidden>
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="logo-icon">🦷</span>
+            <span class="brand-name">DentalHouse</span>
+        </div>
+
+                <nav class="navigation">
+            <ul>
+                <li><a href="../dashboard/dashboard.html"><span class="icon">📊</span> Resumen</a></li>
+                <li><a href="#" class="active"><span class="icon">👥</span> Doctores</a></li>
+                <li><a href="../Especialidades/especialidades.html"><span class="icon">👥</span> Especialidades</a></li>
+                <li><a href="../Servicios/servicios.html"><span class="icon">⚙️</span> Servicios</a></li>
+                <li><a href="../Venta/ventas.html"><span class="icon">📋</span> Ventas</a></li>
+                <li><a href="../Paciente/pacientes.html"><span class="icon">👥</span> Pacientes</a></li>
+                <li><a href="../Cita/Citas.html"><span class="icon">📅</span> Agendar citas</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="sidebar-footer"></div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="top-bar">
+             <label for="sidebar-toggle" class="menu-toggle">☰</label>
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="search" placeholder="Buscar por nombre o especialidad...">
+            </div>
+
+            <div class="user-menu">
+                <input type="checkbox" id="menu-toggle">
+
+                <label for="menu-toggle" class="user-profile">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s" class="avatar" alt="Dr. Morales">
+                    <span>Dr. Morales</span>
+                    <span class="arrow">▼</span>
+                </label>
+
+                <div class="dropdown">
+                    <a href="#">👤 Mi Perfil</a>
+                    <a href="#">⚙️ Configuración</a>
+                    <a href="../Login/index.html">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENIDO -->
+        <section class="content-body doctores-page">
+
+            <!-- HEADER -->
+            <div class="doctores-header">
+                <div class="header-left">
+                    <div class="header-icon">👨‍⚕️</div>
+                    <div>
+                        <h1>Gestión de Doctores</h1>
+                        <p>Administra el personal médico de la clínica</p>
+                    </div>
+                </div>
+
+                
+                <label for="modal-doctor" class="btn-add-doctor">+ Agregar Doctor</label>
+                
+            </div>
+
+            <!-- TARJETAS DE RESUMEN -->
+            <div class="doctor-stats">
+                <div class="stat-card blue">
+                    <div class="stat-icon">👨‍⚕️</div>
+                    <div>
+                        <span>Total Doctores</span>
+                        <h3>12</h3>
+                        <small>Personal registrado</small>
+                    </div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon">💚</div>
+                    <div>
+                        <span>Activos</span>
+                        <h3>10</h3>
+                        <small>En servicio</small>
+                    </div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-icon">📅</div>
+                    <div>
+                        <span>Citas Hoy</span>
+                        <h3>84</h3>
+                        <small>Programadas</small>
+                    </div>
+                </div>
+
+                <div class="stat-card purple">
+                    <div class="stat-icon">⭐</div>
+                    <div>
+                        <span>Promedio Rating</span>
+                        <h3>4.9</h3>
+                        <small>Calificación general</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILTROS -->
+            <div class="doctor-filters">
+                <select>
+                    <option>Todas las especialidades</option>
+                    <option>Ortodoncia</option>
+                    <option>Endodoncia</option>
+                    <option>Cirugía Oral</option>
+                    <option>Odontopediatría</option>
+                </select>
+
+                <select>
+                    <option>Todos los estados</option>
+                    <option>Activos</option>
+                    <option>Inactivos</option>
+                </select>
+
+                <select>
+                    <option>Nombre A-Z</option>
+                    <option>Mayor Rating</option>
+                    <option>Más Citas</option>
+                </select>
+
+                <button class="btn-filter">Filtrar</button>
+            </div>
+
+            <!-- GRID DE DOCTORES -->
+            <div class="doctors-grid">
+
+                <!-- DOCTOR 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-status active">Activo</div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsJ5VDj0om0pc113ghlywVXX0vbo2VITE0uA&s" class="doctor-avatar" alt="Dr. Carlos López">
+
+                    <h3>Dr. Carlos López</h3>
+                    <p class="specialty">Ortodoncia</p>
+
+                    <div class="doctor-info">
+                        <p>📞 8525-1234</p>
+                        <p>✉️ carlos.lopez@dentalhouse.com</p>
+                        <p>🕒 8:00 AM - 5:00 PM</p>
+                    </div>
+
+                    <div class="doctor-metrics">
+                        <div>
+                            <strong>35</strong>
+                            <span>Citas</span>
+                        </div>
+                        <div>
+                            <strong>4.9</strong>
+                            <span>Rating</span>
+                        </div>
+                        <div>
+                            <strong>8 años</strong>
+                            <span>Experiencia</span>
+                        </div>
+                    </div>
+
+                    <div class="doctor-actions">
+                        <button class="btn-outline">Ver Perfil</button>
+                        <label for="modal-editar" class="btn-primary">Editar</label>
+                    </div>
+                </div>
+
+                <!-- DOCTOR 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-status active">Activo</div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTieDoISyfYCHf_QzPQlrFuG00wFJc5nBwGAg&s" class="doctor-avatar" alt="Dra. Silvia Gómez">
+
+                    <h3>Dra. Silvia Gómez</h3>
+                    <p class="specialty">Endodoncia</p>
+
+                    <div class="doctor-info">
+                        <p>📞 7575-9876</p>
+                        <p>✉️ silvia.gomez@dentalhouse.com</p>
+                        <p>🕒 9:00 AM - 4:30 PM</p>
+                    </div>
+
+                    <div class="doctor-metrics">
+                        <div>
+                            <strong>22</strong>
+                            <span>Citas</span>
+                        </div>
+                        <div>
+                            <strong>4.8</strong>
+                            <span>Rating</span>
+                        </div>
+                        <div>
+                            <strong>6 años</strong>
+                            <span>Experiencia</span>
+                        </div>
+                    </div>
+
+                    <div class="doctor-actions">
+                        <button class="btn-outline">Ver Perfil</button>
+                       <label for="modal-editar" class="btn-primary">Editar</label>
+                    </div>
+                </div>
+
+                <!-- DOCTOR 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-status active">Activo</div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsJ5VDj0om0pc113ghlywVXX0vbo2VITE0uA&s" class="doctor-avatar" alt="Dr. José Morales">
+
+                    <h3>Dr. José Morales</h3>
+                    <p class="specialty">Cirugía Oral</p>
+
+                    <div class="doctor-info">
+                        <p>📞 3421-4331</p>
+                        <p>✉️ jose.morales@dentalhouse.com</p>
+                        <p>🕒 7:30 AM - 3:30 PM</p>
+                    </div>
+
+                    <div class="doctor-metrics">
+                        <div>
+                            <strong>41</strong>
+                            <span>Citas</span>
+                        </div>
+                        <div>
+                            <strong>5.0</strong>
+                            <span>Rating</span>
+                        </div>
+                        <div>
+                            <strong>9 años</strong>
+                            <span>Experiencia</span>
+                        </div>
+                    </div>
+
+                    <div class="doctor-actions">
+                        <button class="btn-outline">Ver Perfil</button>
+                       <label for="modal-editar" class="btn-primary">Editar</label>
+                    </div>
+                </div>
+
+                <!-- DOCTOR 4 -->
+                <div class="doctor-card">
+                    <div class="doctor-status inactive">Inactivo</div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfzlMGcmuvjoSJjrhxbOAR98VtSStCUUKCJg&s" class="doctor-avatar" alt="Dra. Ana Torres">
+
+                    <h3>Dra. Ana Torres</h3>
+                    <p class="specialty">Odontopediatría</p>
+
+                    <div class="doctor-info">
+                        <p>📞 8456-1111</p>
+                        <p>✉️ ana.torres@dentalhouse.com</p>
+                        <p>🕒 10:00 AM - 3:00 PM</p>
+                    </div>
+
+                    <div class="doctor-metrics">
+                        <div>
+                            <strong>18</strong>
+                            <span>Citas</span>
+                        </div>
+                        <div>
+                            <strong>4.7</strong>
+                            <span>Rating</span>
+                        </div>
+                        <div>
+                            <strong>5 años</strong>
+                            <span>Experiencia</span>
+                        </div>
+                    </div>
+
+                    <div class="doctor-actions">
+                        <button class="btn-outline">Ver Perfil</button>
+                        <label for="modal-editar" class="btn-primary">Editar</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>    
+        </section>
+
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Nuevo Doctor</h2>
+            <label for="modal-doctor" class="close-modal">✕</label>
+        </div>
+
+        <form class="modal-form">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" placeholder="Ej. Dr. Carlos López">
+                </div>
+
+                <div class="form-group">
+                    <label>Especialidad</label>
+                    <select>
+                        <option>Seleccionar especialidad</option>
+                        <option>Ortodoncia</option>
+                        <option>Endodoncia</option>
+                        <option>Cirugía Oral</option>
+                        <option>Odontopediatría</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" placeholder="8525-1234">
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" placeholder="doctor@dentalhouse.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Horario de entrada</label>
+                    <input type="time">
+                </div>
+
+                <div class="form-group">
+                    <label>Horario de salida</label>
+                    <input type="time">
+                </div>
+
+                <div class="form-group">
+                    <label>Años de experiencia</label>
+                    <input type="number" placeholder="8">
+                </div>
+
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select>
+                        <option>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="modal-actions">
+                <label for="modal-doctor" class="btn-cancel">Cancelar</label>
+                <button type="submit" class="btn-save">💾 Guardar Doctor</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay modal-editar">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Editar Doctor</h2>
+            <label for="modal-editar" class="close-modal">✕</label>
+        </div>
+
+        <form class="modal-form">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" value="Dr. Carlos López">
+                </div>
+
+                <div class="form-group">
+                    <label>Especialidad</label>
+                    <select>
+                        <option selected>Ortodoncia</option>
+                        <option>Endodoncia</option>
+                        <option>Cirugía Oral</option>
+                        <option>Odontopediatría</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" value="8525-1234">
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" value="carlos.lopez@dentalhouse.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Horario de entrada</label>
+                    <input type="time" value="08:00">
+                </div>
+
+                <div class="form-group">
+                    <label>Horario de salida</label>
+                    <input type="time" value="17:00">
+                </div>
+
+                <div class="form-group">
+                    <label>Años de experiencia</label>
+                    <input type="number" value="8">
+                </div>
+
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select>
+                        <option selected>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="modal-actions">
+                <label for="modal-editar" class="btn-cancel">Cancelar</label>
+                <button type="submit" class="btn-save">💾 Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+        
+    </main>
+</div>
+</body>
+</html>

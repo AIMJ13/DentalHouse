@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Dashboard/Dashboard.css">
+    <link rel="stylesheet" href="servicios.css">
+</head>
+<body>
+    
+     <!-- CHECKBOXES PARA MENÚ Y DROPDOWN -->
+    <input type="checkbox" id="sidebar-toggle" hidden>
+    <input type="checkbox" id="menu-toggle" hidden>
+
+    <div class="dashboard-container"> 
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="logo-icon">🦷</span>
+            <span class="brand-name">DentalHouse</span>
+        </div>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="../dashboard/dashboard.html"><span class="icon">📊</span> Resumen</a></li>
+                <li><a href="../doctor/doctor.html"><span class="icon">👥</span> Doctores</a></li>
+                <li><a href="../Especialidades/especialidades.html"><span class="icon">👥</span> Especialidades</a></li>
+                <li><a href="#" class="active"><span class="icon">⚙️</span> Servicios</a></li>
+                <li><a href="../Venta/ventas.html"><span class="icon">📋</span> Ventas</a></li>
+                <li><a href="../Paciente/pacientes.html"><span class="icon">👥</span> Pacientes</a></li>
+                <li><a href="../Cita/Citas.html"><span class="icon">📅</span> Agendar citas</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">       
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-bar">
+             <!-- BOTÓN MENÚ RESPONSIVE -->
+    <label for="sidebar-toggle" class="menu-toggle">☰</label>
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="search" placeholder="Buscar por nombre o especialidad...">
+            </div>
+
+            <div class="user-menu">
+                <input type="checkbox" id="menu-toggle">
+
+                <label for="menu-toggle" class="user-profile">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s" class="avatar">
+                    <span>Dr. Morales</span>
+                    <span>▼</span>
+                </label>
+
+                <div class="dropdown">
+                    <a href="#">👤 Mi Perfil</a>
+                    <a href="#">⚙️ Configuración</a>
+                    <a href="../Login/index.html">🚪 Cerrar sesión</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENIDO -->
+        <section class="content-body">
+
+            <!-- HEADER -->
+<div class="services-top">
+    <div class="welcome-header">
+        <h1>Servicios y Tratamientos</h1>
+        <p>Gestiona el catálogo de servicios de la clínica</p>
+    </div>
+
+    <label for="modal-add-service" class="btn-primary">
+        + Nuevo Servicio
+    </label>
+</div>
+
+<!-- STATS -->
+<div class="services-stats">
+    <div class="stat-card">
+        <span>Total Servicios</span>
+        <h2>8</h2>
+    </div>
+
+    <div class="stat-card green">
+        <span>Activos</span>
+        <h2>6</h2>
+    </div>
+
+    <div class="stat-card blue">
+        <span>Precio Promedio</span>
+        <h2>$125</h2>
+    </div>
+
+    <div class="stat-card orange">
+        <span>Precio Máximo</span>
+        <h2>$500</h2>
+    </div>
+</div>
+
+<!-- TABLA -->
+<div class="services-table">
+
+    <!-- HEADER -->
+    <div class="table-head">
+        <span>Servicio</span>
+        <span>Especialidad</span>
+        <span>Precio</span>
+        <span>Duración</span>
+        <span>Estado</span>
+        <span>Acciones</span>
+    </div>
+
+    <!-- FILA -->
+    <div class="table-row">
+        <div class="service-info">
+            🦷 Limpieza Dental
+        </div>
+        <span>General</span>
+        <span>$30</span>
+        <span>45 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+
+    <div class="table-row">
+        <div class="service-info">
+            🧬 Endodoncia
+        </div>
+        <span>Endodoncia</span>
+        <span>$120</span>
+        <span>90 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="service-info">
+            ✨ Blanqueamiento
+        </div>
+        <span>Estética</span>
+        <span>$80</span>
+        <span>30 min</span>
+        <span class="status inactive">Inactivo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="service-info">
+            🦷 Implantes Dentales
+        </div>
+        <span>estetica</span>
+        <span>$100</span>
+        <span>60 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="service-info">
+            🦷 Limpieza y Extraccion
+        </div>
+        <span>quirurjica</span>
+        <span>$25</span>
+        <span>20 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="service-info">
+            🦷Extraccion de cordales
+        </div>
+        <span>quirurjica</span>
+        <span>$150</span>
+        <span>90 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="service-info">
+            🦷Restauracion con resina
+        </div>
+        <span>Estetica</span>
+        <span>$50</span>
+        <span>30 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="service-info">
+            🦷Protesis Dentales
+        </div>
+        <span>General</span>
+        <span>$55</span>
+        <span>30 min</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-service" class="btn-small">Editar</label>
+    </div>
+
+    </section>
+</main>
+</div> 
+
+*/--=========================
+MODAL ADD
+========================= /*
+<input type="checkbox" id="modal-add-service" class="modal-toggle">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Nuevo Servicio</h2>
+            <label for="modal-add-service">✖</label>
+        </div>
+
+        <form class="modal-body">
+            <input type="text" placeholder="Nombre del servicio">
+            <input type="text" placeholder="Especialidad">
+            <input type="number" placeholder="Precio">
+            <input type="text" placeholder="Duración">
+
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+
+            <button class="btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- =========================
+MODAL EDIT
+========================= -->
+<input type="checkbox" id="modal-edit-service" class="modal-toggle">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Editar Servicio</h2>
+            <label for="modal-edit-service">✖</label>
+        </div>
+
+        <form class="modal-body">
+            <input type="text" value="Limpieza Dental">
+            <input type="text" value="General">
+            <input type="number" value="30">
+            <input type="text" value="45 min">
+
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+
+            <button class="btn-primary">Guardar cambios</button>
+        </form>
+    </div>
+</div>

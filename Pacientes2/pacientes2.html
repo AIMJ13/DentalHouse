@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental House - Panel de Control Moderno</title>
+    <link rel="stylesheet" href="../Dashboard/Dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pacientes.css">
+</head>
+<body>
+          <!-- CHECKBOXES PARA MENÚ Y DROPDOWN -->
+    <input type="checkbox" id="sidebar-toggle" hidden>
+    <input type="checkbox" id="menu-toggle" hidden>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">🦷</span>
+                <span class="brand-name">DentalHouse</span>
+            </div>
+            
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../Resumen/resumen.html"><span class="icon">📊</span> Resumen</a></li>
+                    <li><a href="#" class="active"><span class="icon">👥</span> Pacientes</a></li>
+                   <li><a href="../Citas2/citas2.html"><span class="icon">📅</span> Agendar citas</a></li>
+        
+                </ul>
+            </nav>
+            <div class="sidebar-footer">       
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <!-- BOTÓN MENÚ RESPONSIVE -->
+    <label for="sidebar-toggle" class="menu-toggle">☰</label>
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" placeholder="Buscar paciente o cita...">
+                </div>
+                <div class="user-menu">
+                     <input type="checkbox" id="menu-toggle">
+
+                    <label for="menu-toggle" class="user-profile">
+                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s" class="avatar">
+                       <span>Dr. Morales</span>
+                       <span class="arrow">▼</span>
+                    </label>
+
+                        <div class="dropdown">
+                            <a href="#">👤 Mi Perfil</a>
+                            <a href="#">⚙️ Configuración</a>
+                            <a href="../Login/index.html">🚪 Cerrar sesión</a>
+                        </div>
+                </div>
+            </header>
+            <section class="content-body">
+
+<!-- HEADER -->
+<div class="patients-top">
+    <div class="welcome-header">
+        <h1>Gestión de Pacientes</h1>
+        <p>Administra la información de tus pacientes</p>
+    </div>
+
+    <label for="modal-add-patient" class="btn-primary">
+        + Nuevo Paciente
+    </label>
+</div>
+
+<!-- STATS -->
+<div class="patients-stats">
+    <div class="stat-card">
+        <span>Total pacientes</span>
+        <h2>5</h2>
+    </div>
+
+    <div class="stat-card green">
+        <span>Activos</span>
+        <h2>3</h2>
+    </div>
+
+    <div class="stat-card blue">
+        <span>Inactivos</span>
+        <h2>2</h2>
+    </div>
+</div>
+
+<!-- TABLA -->
+<div class="patients-table">
+
+    <div class="table-head">
+        <span>Paciente</span>
+        <span>Teléfono</span>
+        <span>Dirección</span>
+        <span>Correo</span>
+        <span>Última visita</span>
+        <span>Estado</span>
+        <span>Acciones</span>
+    </div>
+
+    <!-- FILA -->
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Luisa Soza</strong>
+        </div>
+        <span>8525-1234</span>
+        <span>Managua, Nicaragua</span>
+        <span>shekina@email.com</span>
+        <span>2026-03-30</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Kenia Garcia</strong>
+        </div>
+        <span>7577-7819</span>
+        <span>León, Nicaragua</span>
+        <span>kenia@email.com</span>
+        <span>2026-03-25</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Maria Lopez</strong>
+        </div>
+        <span>57757-7819</span>
+        <span>Jinotepe, Carazo</span>
+        <span>MarLpz@email.com</span>
+        <span>2026-05-25</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Adriana Zavala</strong>
+        </div>
+        <span>5456-4567</span>
+        <span>Masaya, Nicaragua</span>
+        <span>abriana@email.com</span>
+        <span>2026-03-15</span>
+        <span class="status inactive">Inactivo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+    
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Cesar Reyes</strong>
+        </div>
+        <span>5395-4797</span>
+        <span>San Marcos, Nicaragua</span>
+        <span>Reyes@email.com</span>
+        <span>2026-03-29</span>
+        <span class="status inactive">Inactivo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Johanner Garcia</strong>
+        </div>
+        <span>9276-7823</span>
+        <span>Diriamba, Nicaragua</span>
+        <span>Johan@email.com</span>
+        <span>2026-04-02</span>
+        <span class="status inactive">Activo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+    <div class="table-row">
+        
+        <div class="patient-info">
+             <strong>Moises Rodriguez</strong>
+        </div>
+        <span>9276-7823</span>
+        <span>Jinotepe, Nicaragua</span>
+        <span>Moises@email.com</span>
+        <span>2026-04-03</span>
+        <span class="status inactive">Activo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+    
+    <div class="table-row">
+        <div class="patient-info">
+             <strong>Mariana Navarrete</strong>
+        </div>
+        <span>5747-5419</span>
+        <span>Jinotepe, Carazo</span>
+        <span>Mariana@email.com</span>
+        <span>2026-05-14</span>
+        <span class="status active">Activo</span>
+        <label for="modal-edit-patient" class="btn-small">Editar</label>
+    </div>
+
+</div>
+
+<!-- MODAL AGREGAR -->
+<input type="checkbox" id="modal-add-patient" class="modal-toggle">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Nuevo Paciente</h2>
+            <label for="modal-add-patient">✖</label>
+        </div>
+
+        <form class="modal-body">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Apellido">
+            <input type="text" placeholder="Teléfono">
+            <input type="text" placeholder="Dirección">
+            <input type="email" placeholder="Correo">
+
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+
+            <button class="btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<!-- MODAL EDITAR -->
+<input type="checkbox" id="modal-edit-patient" class="modal-toggle">
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Editar Paciente</h2>
+            <label for="modal-edit-patient">✖</label>
+        </div>
+
+        <form class="modal-body">
+            <input type="text" value="Shekina">
+            <input type="text" value="Soza">
+            <input type="text" value="8525-1234">
+            <input type="text" value="Managua">
+            <input type="email" value="shekina@email.com">
+
+            <select>
+                <option>Activo</option>
+                <option>Inactivo</option>
+            </select>
+
+            <button class="btn-primary">Guardar cambios</button>
+        </form>
+    </div>
+</div>
+</div>
+
+</section>
+
+
+ </main>
+    
+
+
+</body>
+</html>
+
+       
+
+   
