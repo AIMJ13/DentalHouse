@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidades - Dental House</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../../Styles/Variables.css">
+    <link rel="stylesheet" href="../../../../Styles/Reset.css">
+    <link rel="stylesheet" href="../../../../Styles/Layout.css">
+    <link rel="stylesheet" href="../../../../Styles/Utilities.css">
+
+    <link rel="stylesheet" href="./especialidades.css">
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle" hidden>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">🦷</span>
+                <span class="brand-name">DentalHouse</span>
+            </div>
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/Modules/Dashboard/components/dashboard-main/Dashboard.html"><span class="icon">📊</span> Resumen</a></li>
+                    <li><a href="/Modules/Doctor/components/doctor-list/doctor.html"><span class="icon">👥</span> Doctores</a></li>
+                    <li><a href="#" class="active"><span class="icon">👥</span> Especialidades</a></li>
+                    <li><a href="/Modules/Servicios/components/servicio-list/servicios.html"><span class="icon">⚙️</span> Servicios</a></li>
+                    <li><a href="/Modules/Venta/components/venta-list/ventas.html"><span class="icon">📋</span> Ventas</a></li>
+                    <li><a href="/Modules/Paciente/components/paciente-list/pacientes.html"><span class="icon">👥</span> Pacientes</a></li>
+                    <li><a href="/Modules/Cita/components/cita-list/Citas.html"><span class="icon">📅</span> Agendar citas</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer"></div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-bar">
+                <label for="sidebar-toggle" class="menu-toggle">☰</label>
+
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" id="input-buscar-especialidad" placeholder="Buscar por especialidad...">
+                </div>
+
+                <div class="user-menu">
+                    <input type="checkbox" id="menu-toggle" hidden>
+
+                    <label for="menu-toggle" class="user-profile">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s"
+                             class="avatar"
+                             alt="Foto de perfil del Dr.Morales">
+                        <span>Dr. Morales</span>
+                        <span>▼</span>
+                    </label>
+
+                    <div class="dropdown">
+                        <a href="#">👤 Mi Perfil</a>
+                        <a href="#">⚙️ Configuración</a>
+                        <a href="/Modules/auth/components/Login/login.html">🚪 Cerrar sesión</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENIDO -->
+            <section class="content-body">
+                      <div class="especialidades-header">
+    <div class="header-icon">🦷</div>
+
+    <div class="welcome-header">
+        <h1>Especialidades Médicas</h1>
+        <p>Administra las especialidades clínicas disponibles para doctores, servicios y citas.</p>
+    </div>
+
+    <button type="button" id="btn-nueva-especialidad" class="btn-primary">
+        + Nueva Especialidad
+    </button>
+</div>
+
+<div class="especialidades-resumen">
+    <div class="summary-card">
+        <div class="summary-icon blue">📚</div>
+        <div>
+            <span class="summary-label">Total</span>
+            <strong id="total-especialidades">0</strong>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-icon green">✅</div>
+        <div>
+            <span class="summary-label">Activas</span>
+            <strong id="total-activas">0</strong>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-icon red">⛔</div>
+        <div>
+            <span class="summary-label">Inactivas</span>
+            <strong id="total-inactivas">0</strong>
+        </div>
+    </div>
+</div>
+
+<div class="table-card">
+    <table class="especialidades-table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Especialidad</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody id="especialidades-tbody">
+            <tr>
+                <td colspan="4" class="table-message">
+                    Cargando especialidades...
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination-bar">
+        <span id="pagination-info">Página 1 de 1 | Total: 0</span>
+
+        <div class="pagination-actions">
+            <button type="button" id="btn-anterior" class="btn-page">
+                Anterior
+            </button>
+
+            <select id="page-size" class="page-size">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+            </select>
+
+            <button type="button" id="btn-siguiente" class="btn-page">
+                Siguiente
+            </button>
+        </div>
+    </div>
+</div>
+            </section>
+
+        </main>
+
+    </div>
+    <!-- MODAL ESPECIALIDAD -->
+<div id="modal-especialidad" class="modal-overlay" hidden>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modal-title">Nueva Especialidad</h2>
+            <button type="button" id="btn-cerrar-modal" class="close-modal">✖</button>
+        </div>
+
+        <form id="form-especialidad" class="modal-body">
+            <input type="hidden" id="specialtyId" name="specialtyId">
+
+            <div class="form-group">
+                <label for="specialtyName">Nombre de la especialidad</label>
+                <input 
+                    type="text" 
+                    id="specialtyName" 
+                    name="specialtyName" 
+                    placeholder="Ejemplo: Ortodoncia"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="state">Estado</label>
+                <select id="state" name="state" required>
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btn-guardar-especialidad" class="btn-primary">
+                Guardar
+            </button>
+        </form>
+    </div>
+</div>
+
+    <script type="module" src="./Especialidades.js"></script>
+</body>
+</html>

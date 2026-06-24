@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Power BI - DentalHouse</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../../Styles/Variables.css">
+    <link rel="stylesheet" href="../../../../Styles/Reset.css">
+    <link rel="stylesheet" href="../../../../Styles/Layout.css">
+    <link rel="stylesheet" href="../../../../Styles/Utilities.css">
+    <link rel="stylesheet" href="./dashboard-doctor.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">🦷</span>
+                <span class="brand-name">DentalHouse</span>
+            </div>
+
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="#" class="active">
+                            <span class="icon">📊</span> Dashboard BI
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/Modules/Paciente/components/paciente-doctor/pacientes-doctor.html">
+                            <span class="icon">👥</span> Pacientes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/Modules/Cita/components/cita-doctor/citas-doctor.html">
+                            <span class="icon">📅</span> Agendar citas
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer"></div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="top-bar">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" placeholder="Buscar información...">
+                </div>
+
+                <div class="user-menu">
+                    <input type="checkbox" id="menu-toggle">
+
+                    <label for="menu-toggle" class="user-profile">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s"
+                            class="avatar"
+                            alt="Doctor"
+                        >
+                        <span>Dr. López</span>
+                        <span class="arrow">▼</span>
+                    </label>
+
+                    <div class="dropdown">
+                        <a href="#">👤 Mi Perfil</a>
+                        <a href="#">⚙️ Configuración</a>
+                        <a href="/Modules/auth/components/Login/login.html">🚪 Cerrar sesión</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- DASHBOARD POWER BI -->
+            <section class="powerbi-page">
+
+                <div class="powerbi-header">
+                    <div>
+                        <h1>Dashboard Analítico DentalHouse</h1>
+                        <p>Visualización de KPIs generados desde Power BI y el Data Warehouse.</p>
+                    </div>
+
+                    <span class="powerbi-badge">Power BI</span>
+                </div>
+
+                <div class="powerbi-card">
+                    <iframe 
+                        title="Dental-House"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiNzFjMWJlZjYtNWMxMy00YjVlLTljMmUtNjEyMDk3YWY4Y2NlIiwidCI6ImU0NzY0NmZlLWRhMjctNDUxOC04NDM2LTVmOGIxNThiYTEyNyIsImMiOjR9"
+                        frameborder="0"
+                        allowFullScreen="true">
+                    </iframe>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="./dashboard-doctor.js"></script>
+</body>
+</html>

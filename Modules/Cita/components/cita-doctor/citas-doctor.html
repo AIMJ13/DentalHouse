@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental House - Panel de Gestión de Citas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../Styles/Variables.css">
+    <link rel="stylesheet" href="../../../../Styles/Reset.css">
+    <link rel="stylesheet" href="../../../../Styles/Layout.css">
+    <link rel="stylesheet" href="../../../../Styles/Utilities.css">
+    <link rel="stylesheet" href="./citas-doctor.css">
+</head>
+<body>
+
+    <!-- CHECKBOX PARA MENÚ RESPONSIVE -->
+    <input type="checkbox" id="sidebar-toggle" hidden>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">🦷</span>
+                <span class="brand-name">DentalHouse</span>
+            </div>
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/Modules/Dashboard/components/dashboard-doctor/dashboard-doctor.html"><span class="icon">📊</span> Resumen</a></li>
+                    <li><a href="/Modules/Paciente/components/paciente-doctor/pacientes-doctor.html"><span class="icon">👥</span> Pacientes</a></li>
+                    <li><a href="#" class="active"><span class="icon">📅</span> Agendar citas</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer"></div>
+        </aside>
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="top-bar">
+
+                <!-- BOTÓN MENÚ RESPONSIVE -->
+                <label for="sidebar-toggle" class="menu-toggle">☰</label>
+
+                <!-- BÚSQUEDA -->
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" placeholder="Buscar paciente o cita...">
+                </div>
+
+                <div class="user-menu">
+                    <input type="checkbox" id="menu-toggle">
+
+                    <label for="menu-toggle" class="user-profile">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s"
+                            class="avatar"
+                            alt="Foto de perfil"
+                        >
+                        <span>Dr. Morales</span>
+                        <span class="arrow">▼</span>
+                    </label>
+
+                    <div class="dropdown">
+                        <a href="#">👤 Mi Perfil</a>
+                        <a href="#">⚙️ Configuración</a>
+                        <a href="/Modules/auth/components/Login/login.html">🚪 Cerrar sesión</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENIDO -->
+            <section class="content-body citas-page">
+
+                <!-- CHECKBOX DEL MODAL -->
+                <input type="checkbox" id="modal-cita" class="modal-toggle">
+                
+                <div class="page-header">
+                    <div class="page-title">
+                        <div class="title-icon">📅</div>
+                        <div>
+                            <h1>Agenda de Citas</h1>
+                            <p>Gestiona las citas de los pacientes de manera eficiente</p>
+                        </div>
+                    </div>
+
+                    <label for="modal-cita" class="btn-primary btn-add-cita">
+                        + Agendar Cita
+                    </label>
+                </div>
+
+                <!-- ESTADÍSTICAS -->
+                <div class="stats-grid">
+
+                    <div class="stats-card blue">
+                        <div class="stats-icon">📅</div>
+                        <div>
+                            <span>Total Citas</span>
+                            <h2>5</h2>
+                            <small>Todas las citas programadas</small>
+                        </div>
+                    </div>
+
+                    <div class="stats-card green">
+                        <div class="stats-icon">✅</div>
+                        <div>
+                            <span>Confirmadas</span>
+                            <h3>3</h3>
+                            <small>Citas confirmadas</small>
+                        </div>
+                    </div>
+
+                    <div class="stats-card orange">
+                        <div class="stats-icon">⏳</div>
+                        <div>
+                            <span>Pendientes</span>
+                            <h3>2</h3>
+                            <small>Por confirmar</small>
+                        </div>
+                    </div>
+
+                    <div class="stats-card purple">
+                        <div class="stats-icon">📈</div>
+                        <div>
+                            <span>Hoy</span>
+                            <h3>3</h3>
+                            <small>Citas para hoy</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="filters-panel">
+
+                    <div class="filter-group">
+                        <label>Fecha</label>
+                        <input type="date" value="2026-05-09">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Estado</label>
+                        <select>
+                            <option>Todos</option>
+                            <option>Confirmada</option>
+                            <option>Pendiente</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Doctor</label>
+                        <select>
+                            <option>Todos los doctores</option>
+                            <option>Dr. López</option>
+                            <option>Dr. Ruiz</option>
+                            <option>Dra. Silva</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Servicio</label>
+                        <select>
+                            <option>Todos los servicios</option>
+                            <option>Limpieza Dental</option>
+                            <option>Endodoncia</option>
+                            <option>Consulta Infantil</option>
+                            <option>Ortodoncia</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-today">📅 Hoy</button>
+                </div>
+
+                <!-- TABLA -->
+                <div class="appointments-table">
+
+                    <!-- ENCABEZADO -->
+                    <div class="table-header">
+                        <span>Hora</span>
+                        <span>Paciente</span>
+                        <span>Doctor</span>
+                        <span>Servicio</span>
+                        <span>Estado</span>
+                        <span>Tipo</span>
+                        <span>Duración</span>
+                        <span>Acción</span>
+                    </div>
+
+                    <!-- FILA 1 -->
+                    <div class="table-row">
+                        <div class="time-box">
+                            <strong>09:00</strong>
+                            <small>🕒</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>Juan Pérez</strong>
+                            <small>8525-1234</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>Dr. López</strong>
+                            <small>Odontología General</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>🦷 Limpieza Dental</strong>
+                        </div>
+
+                        <span class="badge success">Confirmada</span>
+                        <span class="type-label">Tratamiento</span>
+                        <span class="duration">45 min</span>
+
+                        <div class="actions">
+                            <button class="btn-icon edit">✏️ Editar</button>
+                            <button class="btn-icon delete">🗑️ Eliminar</button>
+                        </div>
+                    </div>
+
+                    <!-- FILA 2 -->
+                    <div class="table-row">
+                        <div class="time-box">
+                            <strong>10:00</strong>
+                            <small>🕒</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>Ana Gómez</strong>
+                            <small>7575-9876</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>Dr. Ruiz</strong>
+                            <small>Endodoncia</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>🧬 Endodoncia</strong>
+                        </div>
+
+                        <span class="badge warning">Pendiente</span>
+                        <span class="type-label">Tratamiento</span>
+                        <span class="duration">60 min</span>
+
+                        <div class="actions">
+                            <button class="btn-icon edit">✏️ Editar</button>
+                            <button class="btn-icon delete">🗑️ Eliminar</button>
+                        </div>
+                    </div>
+
+                    <!-- FILA 3 -->
+                    <div class="table-row">
+                        <div class="time-box">
+                            <strong>11:30</strong>
+                            <small>🕒</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>Carlos Mora</strong>
+                            <small>8877-6655</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>Dra. Silva</strong>
+                            <small>Odontopediatría</small>
+                        </div>
+
+                        <div class="cell-main">
+                            <strong>👶 Consulta Infantil</strong>
+                        </div>
+
+                        <span class="badge success">Confirmada</span>
+                        <span class="type-label">Consulta</span>
+                        <span class="duration">30 min</span>
+
+                        <div class="actions">
+                            <button class="btn-icon edit">✏️ Editar</button>
+                            <button class="btn-icon delete">🗑️ Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL AGENDAR CITA -->
+                <div class="modal-overlay">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h2>Agendar Nueva Cita</h2>
+                            <label for="modal-cita" class="close-modal">✕</label>
+                        </div>
+
+                        <form class="modal-form">
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Paciente</label>
+                                    <select>
+                                        <option>Seleccionar paciente</option>
+                                        <option>Juan Pérez</option>
+                                        <option>Ana Gómez</option>
+                                        <option>Carlos Mora</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Doctor</label>
+                                    <select>
+                                        <option>Seleccionar doctor</option>
+                                        <option>Dr. López</option>
+                                        <option>Dr. Ruiz</option>
+                                        <option>Dra. Silva</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fecha</label>
+                                    <input type="date">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Hora</label>
+                                    <input type="time">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Servicio</label>
+                                    <select>
+                                        <option>Seleccionar servicio</option>
+                                        <option>Limpieza Dental</option>
+                                        <option>Endodoncia</option>
+                                        <option>Consulta Infantil</option>
+                                        <option>Ortodoncia</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Tipo de cita</label>
+                                    <select>
+                                        <option>Seleccionar tipo</option>
+                                        <option>Consulta</option>
+                                        <option>Tratamiento</option>
+                                        <option>Control</option>
+                                        <option>Urgencia</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Duración</label>
+                                    <select>
+                                        <option>Seleccionar duración</option>
+                                        <option>30 min</option>
+                                        <option>45 min</option>
+                                        <option>60 min</option>
+                                        <option>90 min</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Notas (opcional)</label>
+                                    <input type="text" placeholder="Agregar notas...">
+                                </div>
+
+                            </div>
+
+                            <div class="modal-actions">
+                                <label for="modal-cita" class="btn-cancel">
+                                    Cancelar
+                                </label>
+
+                                <button type="submit" class="btn-primary">
+                                    💾 Guardar Cita
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+    <script type="module" src="./citas-doctor.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* ==========================================================
+   DASHBOARD POWER BI - DENTALHOUSE
+========================================================== */
+
+.powerbi-page {
+    padding: 24px;
+    background: #f8fafc;
+    min-height: calc(100vh - 80px);
+}
+
+/* ==========================================================
+   ENCABEZADO DEL DASHBOARD
+========================================================== */
+.powerbi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 22px 26px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.powerbi-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.powerbi-header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.powerbi-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ==========================================================
+   CONTENEDOR POWER BI
+========================================================== */
+.powerbi-card {
+    width: 100%;
+    height: calc(100vh - 210px);
+    min-height: 620px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+.powerbi-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* ==========================================================
+   RESPONSIVE TABLET
+========================================================== */
+@media (max-width: 1024px) {
+    .powerbi-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .powerbi-card {
+        height: 720px;
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+========================================================== */
+@media (max-width: 768px) {
+    .powerbi-page {
+        padding: 16px;
+    }
+
+    .powerbi-header {
+        padding: 18px;
+    }
+
+    .powerbi-header h1 {
+        font-size: 24px;
+    }
+
+    .powerbi-header p {
+        font-size: 13px;
+    }
+
+    .powerbi-card {
+        height: 640px;
+        min-height: 540px;
+        border-radius: 14px;
+    }
+}

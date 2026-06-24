@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental House - Pacientes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../Styles/Variables.css">
+  <link rel="stylesheet" href="../../../../Styles/Reset.css">
+  <link rel="stylesheet" href="../../../../Styles/Layout.css">
+  <link rel="stylesheet" href="../../../../Styles/Utilities.css">
+  <link rel="stylesheet" href="./pacientes-doctor.css">
+</head>
+<body>
+  <input type="checkbox" id="sidebar-toggle" hidden>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo-icon">DH</span>
+        <span class="brand-name">DentalHouse</span>
+      </div>
+
+      <nav class="navigation">
+        <ul>
+          <li>
+            <a href="/Modules/Dashboard/components/dashboard-doctor/dashboard-doctor.html">
+              <span class="icon">📊</span> Resumen
+            </a>
+          </li>
+          <li>
+            <a href="#" class="active">
+              <span class="icon">👥</span> Pacientes
+            </a>
+          </li>
+          <li>
+            <a href="/Modules/Cita/components/cita-doctor/citas-doctor.html">
+              <span class="icon">📅</span> Agendar citas
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <label for="sidebar-toggle" class="menu-toggle">☰</label>
+
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="search"
+            id="input-buscar-paciente"
+            placeholder="Buscar paciente..."
+          >
+        </div>
+
+        <div class="user-menu">
+          <input type="checkbox" id="menu-toggle">
+
+          <label for="menu-toggle" class="user-profile">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s"
+              class="avatar"
+              alt="Foto de perfil"
+            >
+            <span>Dr. Morales</span>
+            <span class="arrow">▼</span>
+          </label>
+
+          <div class="dropdown">
+            <a href="#">Mi Perfil</a>
+            <a href="#">Configuración</a>
+            <a href="/Modules/auth/components/Login/login.html">Cerrar sesión</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body pacientes-doctor-page">
+        <div class="patients-top">
+          <div class="welcome-header">
+            <h1>Pacientes</h1>
+            <p>Consulta la información general de los pacientes registrados.</p>
+          </div>
+        </div>
+
+        <div class="patients-stats">
+          <div class="stat-card">
+            <span>Total pacientes</span>
+            <h2 id="total-pacientes">0</h2>
+          </div>
+
+          <div class="stat-card green">
+            <span>Activos</span>
+            <h2 id="pacientes-activos">0</h2>
+          </div>
+
+          <div class="stat-card blue">
+            <span>Inactivos</span>
+            <h2 id="pacientes-inactivos">0</h2>
+          </div>
+        </div>
+
+        <div class="patients-table">
+          <div class="table-head">
+            <span>Código</span>
+            <span>Paciente</span>
+            <span>Teléfono</span>
+            <span>Dirección</span>
+            <span>Fecha nacimiento</span>
+            <span>Estado</span>
+          </div>
+
+          <div id="pacientes-lista">
+            <div class="table-row table-message">Cargando pacientes...</div>
+          </div>
+
+          <div class="pagination-bar">
+            <span id="pagination-info">Página 1 de 1 | Total: 0</span>
+
+            <div class="pagination-actions">
+              <button type="button" id="btn-anterior" class="btn-page">Anterior</button>
+
+              <select id="page-size" class="page-size">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+
+              <button type="button" id="btn-siguiente" class="btn-page">Siguiente</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./pacientes-doctor.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental House - Panel de Gestión de Citas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../Styles/Variables.css">
+    <link rel="stylesheet" href="../../../../Styles/Reset.css">
+    <link rel="stylesheet" href="../../../../Styles/Layout.css">
+    <link rel="stylesheet" href="../../../../Styles/Utilities.css">
+    <link rel="stylesheet" href="./citas.css">
+</head>
+<body>
+
+    <!-- CHECKBOX PARA MENÚ RESPONSIVE -->
+    <input type="checkbox" id="sidebar-toggle" hidden>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-icon">🦷</span>
+                <span class="brand-name">DentalHouse</span>
+            </div>
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="/Modules/Dashboard/components/dashboard-main/Dashboard.html"><span class="icon">📊</span> Resumen</a></li>
+                    <li><a href="/Modules/Doctor/components/doctor-list/doctor.html"><span class="icon">👥</span> Doctores</a></li>
+                    <li><a href="/Modules/Especialidades/components/especialidad-list/especialidades.html"><span class="icon">👥</span> Especialidades</a></li>
+                    <li><a href="/Modules/Servicios/components/servicio-list/servicios.html"><span class="icon">⚙️</span> Servicios</a></li>
+                    <li><a href="/Modules/Venta/components/venta-list/ventas.html"><span class="icon">📋</span> Ventas</a></li>
+                    <li><a href="/Modules/Paciente/components/paciente-list/pacientes.html"><span class="icon">👥</span> Pacientes</a></li>
+                    <li><a href="#" class="active"><span class="icon">📅</span> Agendar citas</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer"></div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-bar">
+
+                <!-- BOTÓN MENÚ RESPONSIVE -->
+                <label for="sidebar-toggle" class="menu-toggle">☰</label>
+
+                <!-- BÚSQUEDA -->
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" id="input-buscar-cita" placeholder="Buscar paciente, doctor o motivo...">
+                </div>
+
+                <div class="user-menu">
+                    <input type="checkbox" id="menu-toggle">
+
+                    <label for="menu-toggle" class="user-profile">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-zN2-CHvPKVYALGbjcuchIuqEGjb2ICoVqQ&s"
+                            class="avatar"
+                            alt="Foto de perfil del doctor"
+                        >
+                        <span>Dr. Morales</span>
+                        <span class="arrow">▼</span>
+                    </label>
+
+                    <div class="dropdown">
+                        <a href="#">👤 Mi Perfil</a>
+                        <a href="#">⚙️ Configuración</a>
+                        <a href="/Modules/auth/components/Login/login.html">🚪 Cerrar sesión</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENIDO -->
+            <section class="content-body citas-page">                      
+    <div class="citas-header">
+        <div class="header-icon">📅</div>
+
+        <div class="welcome-header">
+            <h1>Agenda de Citas</h1>
+            <p>Administra las citas registradas entre pacientes y doctores.</p>
+        </div>
+
+        <button type="button" id="btn-nueva-cita" class="btn-primary">
+            + Agendar Cita
+        </button>
+    </div>
+
+  <div class="citas-resumen">
+    <div class="summary-card">
+        <div class="summary-icon blue">📋</div>
+        <div>
+            <span class="summary-label">Total</span>
+            <strong id="total-citas">0</strong>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-icon green">📅</div>
+        <div>
+            <span class="summary-label">Programadas</span>
+            <strong id="total-programadas">0</strong>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-icon purple">✅</div>
+        <div>
+            <span class="summary-label">Completadas</span>
+            <strong id="total-completadas">0</strong>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-icon red">❌</div>
+        <div>
+            <span class="summary-label">Canceladas</span>
+            <strong id="total-canceladas">0</strong>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-icon orange">⚠️</div>
+        <div>
+            <span class="summary-label">No asistió</span>
+            <strong id="total-no-asistio">0</strong>
+        </div>
+    </div>
+</div>
+
+    <div class="filters-panel">
+    <div class="filter-group">
+        <label for="filtro-fecha">Fecha</label>
+        <input type="date" id="filtro-fecha">
+    </div>
+
+    <div class="filter-group">
+        <label for="filtro-estado">Estado</label>
+        <select id="filtro-estado">
+            <option value="">Todos los estados</option>
+            <option value="Programada">Programada</option>
+            <option value="Completada">Completada</option>
+            <option value="Cancelada">Cancelada</option>
+            <option value="No asistió">No asistió</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="filtro-doctor">Doctor</label>
+        <select id="filtro-doctor">
+            <option value="">Todos los doctores</option>
+        </select>
+    </div>
+
+    <div class="filters-actions">
+        <button type="button" id="btn-hoy" class="btn-page">
+            📅 Hoy
+        </button>
+
+        <button type="button" id="btn-limpiar-filtros" class="btn-page btn-clear">
+            Limpiar
+        </button>
+    </div>
+</div>
+
+    <div class="table-card">
+        <table class="citas-table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Paciente</th>
+                    <th>Doctor</th>
+                    <th>Motivo</th>
+                    <th>Situación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="citas-tbody">
+                <tr>
+                    <td colspan="8" class="table-message">
+                        Cargando citas...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pagination-bar">
+            <span id="pagination-info">Página 1 de 1 | Total: 0</span>
+
+            <div class="pagination-actions">
+                <button type="button" id="btn-anterior" class="btn-page">
+                    Anterior
+                </button>
+
+                <select id="page-size" class="page-size">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                </select>
+
+                <button type="button" id="btn-siguiente" class="btn-page">
+                    Siguiente
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CITA -->
+    <div id="modal-cita" class="modal-overlay" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Agendar Cita</h2>
+                <button type="button" id="btn-cerrar-modal" class="close-modal">✖</button>
+            </div>
+
+            <form id="form-cita" class="modal-body">
+                <input type="hidden" id="appointmentId" name="appointmentId">
+
+                <div class="form-group">
+                    <label for="patientId">Paciente</label>
+                    <select id="patientId" name="patientId" required>
+                        <option value="">Seleccione un paciente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorId">Doctor</label>
+                    <select id="doctorId" name="doctorId" required>
+                        <option value="">Seleccione un doctor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Fecha</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Hora</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group form-group-full">
+                    <label for="reason">Motivo de la cita</label>
+                    <textarea 
+                        id="reason" 
+                        name="reason" 
+                        placeholder="Ejemplo: Consulta general, dolor dental, control..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="btn-guardar-cita" class="btn-primary">
+                    Guardar Cita
+                </button>
+            </form>
+        </div>
+    </div>
+                
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./cita.js"></script>
+
+</body>
+</html>

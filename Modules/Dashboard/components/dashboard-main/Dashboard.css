@@ -1,0 +1,187 @@
+/* ==========================================================
+   DASHBOARD POWER BI - DENTALHOUSE
+========================================================== */
+
+.content-body {
+    padding: 28px 32px 40px;
+    background: #f8fafc;
+    min-height: calc(100vh - 78px);
+}
+
+/* ==========================================================
+   ENCABEZADO NORMAL
+========================================================== */
+
+.welcome-header {
+    margin-bottom: 24px;
+}
+
+.welcome-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.welcome-header p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* ==========================================================
+   CARDS PEQUEÑAS
+========================================================== */
+
+.bi-info-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.bi-info-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #ffffff;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.bi-info-card span {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.bi-info-card strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.bi-info-card p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ==========================================================
+   POWER BI
+========================================================== */
+
+.powerbi-section {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.powerbi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.powerbi-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.powerbi-header p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.powerbi-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.powerbi-frame-wrapper {
+    width: 100%;
+    height: 74vh;
+    min-height: 620px;
+    max-height: 850px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+}
+
+.powerbi-frame-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media screen and (max-width: 1024px) {
+    .content-body {
+        padding: 22px;
+    }
+
+    .bi-info-row {
+        grid-template-columns: 1fr;
+    }
+
+    .powerbi-frame-wrapper {
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content-body {
+        padding: 16px;
+    }
+
+    .welcome-header h1 {
+        font-size: 24px;
+    }
+
+    .welcome-header p {
+        font-size: 13px;
+    }
+
+    .powerbi-section {
+        padding: 16px;
+    }
+
+    .powerbi-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .powerbi-frame-wrapper {
+        height: 620px;
+        min-height: 540px;
+    }
+}

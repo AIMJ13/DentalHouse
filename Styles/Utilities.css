@@ -1,0 +1,345 @@
+/* ==========================================================
+   BUTTONS, BADGES, MODALS & FORMS UTILITIES
+   ========================================================== */
+
+/* --- BUTTONS --- */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), #3b82f6);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+    text-decoration: none;
+    border: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.22);
+}
+
+.btn-cancel {
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    color: #475569;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-cancel:hover {
+    background: #e2e8f0;
+}
+
+.btn-save {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), #3b82f6);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-save:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+}
+
+/* Acciones de tablas / lists */
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-action {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+    min-width: 78px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background: linear-gradient(135deg, var(--primary), #1d4ed8);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    color: #ffffff;
+}
+
+.btn-edit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+    color: #ffffff;
+}
+
+.btn-delete:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+}
+
+/* --- BADGES Y ESTADOS --- */
+.badge, .status {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.badge.success, .status.active, .status.confirmed, .badge.completed {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge.warning, .status.pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status.inactive, .badge.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* --- MODALES --- */
+.modal-toggle {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 9999;
+}
+
+/* Activar modal */
+.modal-toggle:checked ~ .modal-overlay,
+.modal-toggle:checked + .modal-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    transform: scale(0.96);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modal-toggle:checked ~ .modal-overlay .modal-content,
+.modal-toggle:checked + .modal-overlay .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.close-modal, .close {
+    font-size: 22px;
+    cursor: pointer;
+    color: #64748b;
+    font-weight: 700;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+.close-modal:hover, .close:hover {
+    color: #0f172a;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* --- FORMULARIOS Y FILTROS --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.form-group input,
+.form-group select {
+    height: 44px;
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 14px;
+    background: #ffffff;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+/* --- PROGRESS BARS --- */
+.progress {
+    background: #e5e7eb;
+    height: 6px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 20px;
+}
+
+/* --- TARGET MODAL (CSS ONLY) --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 99999;
+}
+
+.modal:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    float: right;
+}
+
+/* --- COLOR UTILITIES --- */
+.red {
+    background: #fee2e2;
+}
+
+.green {
+    background: #dcfce7;
+}
+
+/* --- STATUS BOXES & LISTS --- */
+.status-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.status-item.red {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-item.yellow {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-item.green {
+    background: #dcfce7;
+    color: #166534;
+}
